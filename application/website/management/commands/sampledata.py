@@ -14,11 +14,3 @@ class Command(BaseCommand):
             )
             self.stdout.write(self.style.SUCCESS('Sample user created'))
 
-        if not User.objects.filter(email='admin@gmail.com').exists():
-            User.objects.create_superuser(
-                email='admin@gmail.com',
-                full_name='Admin User',
-                phone='0987654321',
-                password='adminPassword123!'
-            )
-            self.stdout.write(self.style.SUCCESS('Sample admin user created'))

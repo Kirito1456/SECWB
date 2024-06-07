@@ -17,8 +17,8 @@ class UserManager(BaseUserManager):
             full_name=full_name,
             phone=phone,
             profile_photo=profile_photo,
+            password=password
         )
-        user.set_password(password)
         user.save(using=self._db)
         return user
 
@@ -50,10 +50,6 @@ class User(AbstractBaseUser):
 
     def has_module_perms(self, app_label):
         return True
-
-    @property
-    def is_staff(self):
-        return self.is_admin
 
     class Meta:
         db_table = 'users'

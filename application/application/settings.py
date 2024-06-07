@@ -57,7 +57,7 @@ MIDDLEWARE = [
 AUTHENTICATION_BACKENDS = [
     'axes.backends.AxesBackend',
     'django.contrib.auth.backends.ModelBackend',
-   
+    
 ]
 
 AXES_FAILURE_LIMIT = 10
@@ -98,7 +98,7 @@ DATABASES = {
     }
 }
 
-#AUTH_USER_MODEL = 'website.User'
+AUTH_USER_MODEL = 'website.User'
 
 
 # Password validation

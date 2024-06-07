@@ -1,46 +1,36 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
-from .forms import  UserRegistrationForm
-#from axes.backends import AxesBackend
+from .forms import  RegistrationForm
 from .models import User
 
 def register(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST, request.FILES)
+        form = RegistrationForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save(commit=False)
-            print(form.cleaned_data['email'])
-            print(form.cleaned_data['password'])
-            print(user)
             user.set_password(form.cleaned_data['password'])
             user.save()
-            #user.backend = 'django.contrib.auth.backends.ModelBackend'
-            login(request, user)
-            print(user.password)
-            print(user.email)
-            return redirect('dashboard')
+            #login(request, user)
+            return redirect('login')
     else:
-        form = UserRegistrationForm()
+        form = RegistrationForm()
     return render(request, 'register.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        
+        print(email)
+        print(password)
         if email and password:
-            #axes_backend = AxesBackend()
-            print(email)
-            print(password)
-            user = authenticate(request=request, email=email, password=password)
-            #user.backend = 'django.contrib.auth.backends.ModelBackend'
+            user = authenticate(request, email=email, password=password)
             print(user)
-            if user is None:
+            if user is not None:
                 login(request, user)
-                return redirect('dashboard')  # Redirect to dashboard upon successful login
+                return redirect('dashboard')
             else:
                 error_message = "Invalid email or password."
         else:
@@ -50,13 +40,12 @@ def user_login(request):
 
     return render(request, 'login.html', {'error_message': error_message})
 
-@login_required
-def admin(request):
-    if not request.user.is_admin:
-        return redirect('login')
-    users = User.objects.all()
-    return render(request, 'admin.html', {'users': users})
-
-
 def dashboard(request):
+    # Ensure user is authenticated before accessing the dashboard
+    if not request.user.is_authenticated:
+        return redirect('login')  # Redirect to login page if user is not authenticated
     return render(request, 'dashboard.html')
+
+def user_logout(request):
+    logout(request)
+    return redirect('login')

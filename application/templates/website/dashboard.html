@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-</head>
-<body>
-    <h2>Welcome USER!</h2>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - My Web Application{% endblock %}
+
+{% block content %}
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>This is your dashboard.</p>
+{% endblock %}
