@@ -25,6 +25,8 @@ class UserManager(BaseUserManager):
     def create_superuser(self, email, full_name, phone, password=None, profile_photo=None):
         user = self.create_user(email, full_name, phone, password, profile_photo)
         user.is_admin = True
+        user.is_staff = True
+        user.set_password(password)
         user.save(using=self._db)
         return user
 
@@ -36,6 +38,7 @@ class User(AbstractBaseUser):
     profile_photo = models.ImageField(upload_to='profile_photos/', blank=True, null=True)
     password = models.CharField(max_length=255)
     is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
 
@@ -53,3 +56,4 @@ class User(AbstractBaseUser):
 
     class Meta:
         db_table = 'users'
+

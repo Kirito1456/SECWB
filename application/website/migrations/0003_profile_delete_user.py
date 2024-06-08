@@ -23,8 +23,5 @@ class Migration(migrations.Migration):
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
-        migrations.RenameModel(
-            old_name='User',
-            new_name='OldUser',
-        ),
+
     ]
