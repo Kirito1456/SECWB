@@ -60,8 +60,8 @@ AUTHENTICATION_BACKENDS = [
     
 ]
 
-AXES_FAILURE_LIMIT = 10
-AXES_COOLOFF_TIME = 1  # in hours
+AXES_FAILURE_LIMIT = 5
+AXES_COOLOFF_TIME = 300  # 5 mins
 
 ROOT_URLCONF = 'application.urls'
 
@@ -120,10 +120,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 #password hash validation
-#PASSWORD_HASHERS = [
- #   'django.contrib.auth.hashers.Argon2PasswordHasher',
-  #  
-#]
+PASSWORD_HASHERS = [
+   'django.contrib.auth.hashers.Argon2PasswordHasher',
+   
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

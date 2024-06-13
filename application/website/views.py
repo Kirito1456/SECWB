@@ -5,6 +5,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from .forms import  RegistrationForm
 from .models import User
+from django.urls import reverse
 
 def register(request):
     if request.method == 'POST':
@@ -30,7 +31,10 @@ def user_login(request):
             print(user)
             if user is not None:
                 login(request, user)
-                return redirect('dashboard')
+                if user.is_admin:
+                    return redirect(reverse('admin:index'))
+                else:
+                    return redirect('dashboard')
             else:
                 error_message = "Invalid email or password."
         else:
@@ -49,3 +53,6 @@ def dashboard(request):
 def user_logout(request):
     logout(request)
     return redirect('login')
+
+# def admin_page(request):
+#     return render(request, 'dashboard.html')
