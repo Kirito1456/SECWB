@@ -3,6 +3,12 @@
 {% block title %}Dashboard - My Web Application{% endblock %}
 
 {% block content %}
-    <h2>Welcome, {{ user.full_name }}!</h2>
-    <p>This is your dashboard.</p>
+<div class="dashboard-container">
+    <div class="dashboard-box">
+        <div class="content-header">
+            <h2>Welcome, {{ user.full_name }}!</h2>
+            <p>This is your dashboard.</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
