@@ -1,0 +1,8 @@
+django 
+djlint 
+pillow 
+mysqlclient 
+django-axes 
+argon2-cffi 
+python-magic 
+python-magic-bin
