@@ -2,6 +2,12 @@
 
 {% block title %}Register - My Web Application{% endblock %}
 
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <div class="box">
@@ -14,8 +20,11 @@
                 <div class="form-group">
                     {{ form.as_p }}
                 </div>
-                <button type="submit">Register</button>
-            </form>
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+            </form> 
+            <p> Already Registered? Click <a href="{% url 'login' %}">here</a> to Login</p>
         </div>
     </div>
 </div>

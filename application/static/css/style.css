@@ -1,0 +1,91 @@
+/* Reset some basic elements for consistency */
+body, h2, p, a, form, input, button {
+  margin: 2;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a background color for the body */
+body {
+  background-color: #f0f2f5;  /* Light grey background color */
+  font-family: Arial, sans-serif; /* Setting a default font */
+}
+
+/* Container to center the form on the page */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Box to provide some padding and border around the form */
+.box {
+  background: #ffffff;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the form element */
+.form {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Form header styles */
+.form-header h2 {
+  margin-bottom: 1rem;
+  color: #333333;
+  text-align: center;
+}
+
+/* Form group styles for consistent spacing */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Input and textarea elements */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Button styles */
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Link styles */
+.form p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form p a:hover {
+  text-decoration: underline;
+}
+
+/* Error message styles */
+.error-message {
+  color: red;
+  margin-top: 1rem;
+  text-align: center;
+}

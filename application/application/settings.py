@@ -92,10 +92,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webapp',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
-        'PORT': '4000',
-        #'PORT': '3306'
+        #'PORT': '4000',
+        'PORT': '3306'  
     }
 }
 
