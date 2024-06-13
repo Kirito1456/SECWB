@@ -13,9 +13,11 @@
     <div class="dashboard-box">
         <div class="content-header">
             <h2>Welcome, {{ user.full_name }}!</h2>
-            <p>This is your dashboard.</p>
         </div>
-        <a href="{% url 'logout' %}">Logout</a>
+        <div class="form-group">
+            <p>This is your dashboard.</p>
+        <div>
+        <button><a href="{% url 'logout' %}">Logout</a></button>
     </div>
 </div>
 {% endblock %}
