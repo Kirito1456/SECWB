@@ -9,7 +9,6 @@ from django.contrib.auth import get_user_model
 from django.core.validators import validate_email, RegexValidator
 from django.core.exceptions import ValidationError
 import re
-import magic
 
 
 class RegistrationForm(forms.ModelForm):
@@ -54,11 +53,21 @@ class RegistrationForm(forms.ModelForm):
         return password_confirm
     
     def clean_profile_photo(self):
+        # Clean and validate the profile photo field
         profile_photo = self.cleaned_data.get('profile_photo')
         if profile_photo:
-            file_type = magic.from_buffer(profile_photo.read(), mime=True)
-            if file_type not in ['image/jpeg', 'image/png', 'image/jpg']:
+            # Check file extension
+            valid_extensions = ['jpg', 'jpeg', 'png']
+            extension = profile_photo.name.split('.')[-1].lower()
+            if extension not in valid_extensions:
                 raise forms.ValidationError('Invalid file type. Only JPEG and PNG are allowed.')
+            
+            # Check MIME type
+            valid_mime_types = ['image/jpeg', 'image/png']
+            mime_type = profile_photo.content_type
+            if mime_type not in valid_mime_types:
+                raise forms.ValidationError('Invalid file type. Only JPEG and PNG are allowed.')
+            
         return profile_photo
 
 

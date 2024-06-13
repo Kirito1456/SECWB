@@ -6,7 +6,6 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('admin', '0013_alter_logentry_user'),
         ('website', '0005_rename_user_customuser'),
     ]
 
