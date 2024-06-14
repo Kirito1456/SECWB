@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Admin Page</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - My Web Application{% endblock %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
     <h1>Admin Page</h1>
     <table>
         <thead>
-            <tr>
+            <tr>    
                 <th>ID</th>
                 <th>Full Name</th>
                 <th>Email</th>
@@ -22,10 +28,17 @@
                     <td>{{ user.full_name }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.phone }}</td>
-                    <td><img src="{{ user.profile_photo.url }}" alt="Profile Photo" width="50"></td>
+                    <td>
+                        {% if user.profile_photo %}
+                            With Photo
+                        {% else %}
+                            No Photo
+                        {% endif %}
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+    <button><a href="{% url 'logout' %}">Logout</a></button>
+</div>
+{% endblock %}

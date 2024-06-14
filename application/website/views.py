@@ -32,7 +32,8 @@ def user_login(request):
             if user is not None:
                 login(request, user)
                 if user.is_admin:
-                    return redirect(reverse('admin:index'))
+                    #return redirect(reverse('admin:index'))
+                    return redirect('admin_page')
                 else:
                     return redirect('dashboard')
             else:
@@ -51,8 +52,19 @@ def dashboard(request):
     return render(request, 'dashboard.html')
 
 def user_logout(request):
+    print("Logging out...")
     logout(request)
+    print("User logged out. Redirecting to login.")
     return redirect('login')
 
-# def admin_page(request):
-#     return render(request, 'dashboard.html')
+@login_required
+def admin_page(request):
+    # Retrieve all users from the database
+    users = User.objects.all()
+    
+    # Pass the users to the template context
+    context = {
+        'users': users
+    }
+    
+    return render(request, 'admin.html', context)
