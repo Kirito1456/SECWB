@@ -7,21 +7,25 @@
     {% block styles %}{% endblock %}
 </head>
 <body>
-    <!--
-    <header>
+    
+    {% comment %} <header>
         <nav>
             <ul>
+                <li><a href="{% url 'login' %}">Home</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li> 
+                    {% if user.is_admin %}
+                        <li><a href="{% url 'admin_page' %}">Admin Dashboard</a></li>
+                    {% endif %}
                 {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
-                <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li> 
                 {% endif %}
             </ul>
         </nav>
-    </header>
-    -->
+    </header> {% endcomment %}
+    
     <main>
         {% block content %}
         {% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}User Details{% endblock %}
+
+{% block content %}
+    <h2>Manage User</h2>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Full Name:</strong> {{ user.full_name }}</p>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Phone:</strong> {{ user.phone }}</p>
+    <p><strong>Profile Photo:</strong> {% if user.profile_photo %}<img src="{{ user.profile_photo.url }}" alt="Profile Photo" style="max-width: 200px;">{% else %}N/A{% endif %}</p>
+
+
+    <h3>Actions</h3>
+    {% if user.is_banned %}
+        <form action="{% url 'unban_user' user.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Unban User</button>
+        </form>
+    {% else %}
+        <form action="{% url 'ban_user' user.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Ban User</button>
+        </form>
+    {% endif %}
+
+    {% if user.is_active %}
+        <form action="{% url 'deactivate_account' user.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" name="action" value="deactivate">Deactivate</button>
+        </form>
+    {% comment %} {% else %}
+        <form action="{% url 'activate_account' user.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Activate Account</button>
+        </form> {% endcomment %}
+    {% endif %}
+
+    <a href="{% url 'admin_page' %}">Back to Dashboard</a>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Post Details{% endblock %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+    <p>By {{ post.author.username }} on {{ post.created_at }}</p>
+    
+    <p class="likes">Total Likes: {{ post.total_likes }}</p>
+    {% if is_liked %}
+        <a href="{% url 'like_post' post.id %}">Unlike</a>
+    {% else %}
+        <a href="{% url 'like_post' post.id %}">Like</a>
+    {% endif %}
+
+    <h3>Comments</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Comment</button>
+    </form>
+    
+    {% for comment in comments %}
+        <div class="comment">
+            <p class="comment-author">{{ comment.user.username }} commented:</p>
+            <p>{{ comment.content }}</p>
+            <p class="comment-date">On {{ comment.created_at }}</p>
+        </div>
+    {% endfor %}
+
+    {% if user.is_authenticated and user == post.author %}
+        <a href="{% url 'edit_post' post.id %}" class="edit-post">Edit Post</a>
+    {% endif %}
+</div>
+{% endblock %}

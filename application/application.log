@@ -1,0 +1,147 @@
+2024-07-17 04:56:30,791 INFO Watching for file changes with StatReloader
+2024-07-17 04:56:47,336 INFO "GET / HTTP/1.1" 200 1338
+2024-07-17 04:56:57,460 INFO "POST / HTTP/1.1" 302 0
+2024-07-17 04:56:57,483 INFO "GET /dashboard/ HTTP/1.1" 200 1997
+2024-07-17 04:56:57,531 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-07-17 04:59:10,366 INFO "GET /logout/ HTTP/1.1" 302 0
+2024-07-17 04:59:10,370 INFO "GET / HTTP/1.1" 200 1338
+2024-07-17 05:00:41,590 INFO "POST / HTTP/1.1" 302 0
+2024-07-17 05:00:41,602 INFO "GET /dashboard/ HTTP/1.1" 200 1997
+2024-07-17 05:00:41,646 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-07-17 05:00:58,650 INFO "GET /profile/ HTTP/1.1" 200 1215
+2024-07-17 05:01:35,535 INFO "GET /logout/ HTTP/1.1" 302 0
+2024-07-17 05:01:35,538 INFO "GET / HTTP/1.1" 200 1338
+2024-07-17 05:01:42,025 INFO "POST / HTTP/1.1" 302 0
+2024-07-17 05:01:42,035 INFO "GET /admin_page/ HTTP/1.1" 200 1523
+2024-07-17 05:02:02,011 INFO "GET /logout/ HTTP/1.1" 302 0
+2024-07-17 05:02:02,015 INFO "GET / HTTP/1.1" 200 1338
+2024-07-17 05:03:45,363 INFO C:\Users\JM\Documents\GitHub\SECWB\application\application\settings.py changed, reloading.
+2024-07-17 05:03:45,941 INFO Watching for file changes with StatReloader
+2024-07-17 05:04:05,155 INFO C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py changed, reloading.
+2024-07-17 05:04:05,697 INFO Watching for file changes with StatReloader
+2024-07-17 05:04:28,149 INFO C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py changed, reloading.
+2024-07-17 05:04:28,701 INFO Watching for file changes with StatReloader
+2024-07-17 05:04:34,321 INFO C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py changed, reloading.
+2024-07-17 05:04:34,860 INFO Watching for file changes with StatReloader
+2024-07-17 05:04:38,192 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Training\VENV\checking\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Training\VENV\checking\lib\site-packages\django\http\request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-07-17 05:04:38,204 WARNING Bad Request: /
+2024-07-17 05:04:38,204 WARNING "GET / HTTP/1.1" 400 143
+2024-07-17 05:04:59,339 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Training\VENV\checking\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Training\VENV\checking\lib\site-packages\django\http\request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-07-17 05:04:59,340 WARNING Bad Request: /admin_page/
+2024-07-17 05:04:59,340 WARNING "GET /admin_page/ HTTP/1.1" 400 143
+2024-07-17 05:06:23,612 INFO C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py changed, reloading.
+2024-07-17 05:06:24,192 INFO Watching for file changes with StatReloader
+2024-07-17 05:08:18,510 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Training\VENV\checking\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Training\VENV\checking\lib\site-packages\django\http\request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-07-17 05:08:18,513 WARNING Bad Request: /
+2024-07-17 05:08:18,513 WARNING "GET / HTTP/1.1" 400 143
+2024-07-17 05:08:19,411 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Training\VENV\checking\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Training\VENV\checking\lib\site-packages\django\http\request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-07-17 05:08:19,412 WARNING Bad Request: /
+2024-07-17 05:08:19,412 WARNING "GET / HTTP/1.1" 400 143
+2024-07-17 05:08:42,395 INFO C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py changed, reloading.
+2024-07-17 05:08:42,931 INFO Watching for file changes with StatReloader
+2024-07-17 05:08:43,931 ERROR Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Training\VENV\checking\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\utils\deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Training\VENV\checking\lib\site-packages\django\http\request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2024-07-17 05:08:43,933 WARNING Bad Request: /
+2024-07-17 05:08:43,934 WARNING "GET / HTTP/1.1" 400 143
+2024-07-17 05:09:25,412 INFO C:\Users\JM\Documents\GitHub\SECWB\application\application\settings.py changed, reloading.
+2024-07-17 05:09:26,022 INFO Watching for file changes with StatReloader
+2024-07-17 05:09:28,874 INFO "GET / HTTP/1.1" 200 1338
+2024-07-17 05:09:50,690 INFO C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py changed, reloading.
+2024-07-17 05:09:51,269 INFO Watching for file changes with StatReloader
+2024-07-17 05:09:54,743 ERROR Internal Server Error: /
+2024-07-17 05:09:54,744 ERROR "GET / HTTP/1.1" 500 53
+2024-07-17 05:10:23,271 ERROR Internal Server Error: /admin_page/
+Traceback (most recent call last):
+  File "C:\Training\VENV\checking\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Training\VENV\checking\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+  File "C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py", line 237, in <lambda>
+    @user_passes_test(lambda u: u.is_admin)
+  File "C:\Training\VENV\checking\lib\site-packages\django\utils\functional.py", line 268, in inner
+    return func(_wrapped, *args)
+AttributeError: 'AnonymousUser' object has no attribute 'is_admin'
+2024-07-17 05:10:23,273 ERROR "GET /admin_page/ HTTP/1.1" 500 145
+2024-07-17 05:10:26,184 ERROR Internal Server Error: /admin_page/
+Traceback (most recent call last):
+  File "C:\Training\VENV\checking\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Training\VENV\checking\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Training\VENV\checking\lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+  File "C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py", line 237, in <lambda>
+    @user_passes_test(lambda u: u.is_admin)
+  File "C:\Training\VENV\checking\lib\site-packages\django\utils\functional.py", line 268, in inner
+    return func(_wrapped, *args)
+AttributeError: 'AnonymousUser' object has no attribute 'is_admin'
+2024-07-17 05:10:26,185 ERROR "GET /admin_page/ HTTP/1.1" 500 145
+2024-07-17 05:10:29,827 ERROR Internal Server Error: /
+2024-07-17 05:10:29,828 ERROR "GET / HTTP/1.1" 500 53
+2024-07-17 05:10:30,737 ERROR Internal Server Error: /
+2024-07-17 05:10:30,737 ERROR "GET / HTTP/1.1" 500 53
+2024-07-17 05:10:38,080 INFO C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py changed, reloading.
+2024-07-17 05:10:38,616 INFO Watching for file changes with StatReloader
+2024-07-17 05:10:39,790 INFO "GET / HTTP/1.1" 200 1338
+2024-07-17 05:10:55,780 INFO C:\Users\JM\Documents\GitHub\SECWB\application\application\settings.py changed, reloading.
+2024-07-17 05:10:56,322 INFO Watching for file changes with StatReloader
+2024-07-17 05:11:05,149 INFO C:\Users\JM\Documents\GitHub\SECWB\application\application\settings.py changed, reloading.
+2024-07-17 05:11:05,693 INFO Watching for file changes with StatReloader
+2024-07-17 05:11:17,604 INFO C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py changed, reloading.
+2024-07-17 05:11:18,218 INFO Watching for file changes with StatReloader
+2024-07-17 05:11:19,638 ERROR Internal Server Error: /
+2024-07-17 05:11:19,638 ERROR "GET / HTTP/1.1" 500 65240
+2024-07-17 05:11:28,097 INFO C:\Users\JM\Documents\GitHub\SECWB\application\website\views.py changed, reloading.
+2024-07-17 05:11:28,700 INFO Watching for file changes with StatReloader
+2024-07-17 05:11:30,141 INFO "GET / HTTP/1.1" 200 1338
