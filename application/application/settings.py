@@ -101,7 +101,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webapp',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': '12345678',
         'HOST': 'localhost',
         #'PORT': '4000',
         'PORT': '3306'  
@@ -135,6 +135,13 @@ PASSWORD_HASHERS = [
    
 ]
 
+# SSL configuration
+# Comment for now. Uncomment when deployed.
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -166,6 +173,7 @@ LOGGING = {
         },
     },
 }
+
 
 
 
