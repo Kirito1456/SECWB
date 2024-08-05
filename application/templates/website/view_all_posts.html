@@ -1,12 +1,45 @@
 {% extends 'base.html' %}
 
 {% block title %}View All Posts{% endblock %}
-
 {% block content %}
+
+<nav>
+    <ul>
+        <li><a href="{% url 'admin_page' %}">Admin Page</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Pending Posts</h2>
+    <ul>
+        {% for post in posts %}
+            {% if not post.is_approved %}
+                <li>
+                    {{ post.title }} by {{ post.author }}
+                    Content: {{ post.content }}
+                    <form method="post" action="{% url 'manage_post' post.id 'approve' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">Approve</button>
+                    </form>
+                    <form method="post" action="{% url 'manage_post' post.id 'delete' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
     <h2>All Posts</h2>
     <ul>
         {% for post in posts %}
-            <li>{{ post.title }} by {{ post.user.email }} on {{ post.created_at }}</li>
+            {% if post.is_approved %}
+                <li>{{ post.title }} by {{ post.author }}
+                    Content: {{ post.content }}
+                </li>
+            {% endif %}
         {% endfor %}
     </ul>
+</div>
 {% endblock %}
+

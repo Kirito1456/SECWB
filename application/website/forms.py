@@ -138,10 +138,20 @@ class PostSearchForm(forms.Form):
 class PostFilterForm(forms.Form):
     date_format = '%Y-%m-%d'  # Define your desired date format here
 
-    start_date = forms.DateField(label='Start Date', required=False,
-                                 input_formats=[date_format])
-    end_date = forms.DateField(label='End Date', required=False,
-                               input_formats=[date_format])
+    start_date = forms.DateField(
+        label='Start Date',
+        required=False,
+        input_formats=[date_format],
+        widget=forms.DateInput(attrs={'placeholder': 'YYYY-MM-DD'}),
+        error_messages={'invalid': 'Enter a valid date in YYYY-MM-DD format.'}
+    )
+    end_date = forms.DateField(
+        label='End Date',
+        required=False,
+        input_formats=[date_format],
+        widget=forms.DateInput(attrs={'placeholder': 'YYYY-MM-DD'}),
+        error_messages={'invalid': 'Enter a valid date in YYYY-MM-DD format.'}
+    )
 
     def clean(self):
         cleaned_data = super().clean()

@@ -101,7 +101,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webapp',
         'USER': 'root',
-        'PASSWORD': '12345678',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
         #'PORT': '4000',
         'PORT': '3306'  
@@ -157,6 +157,13 @@ LOGGING = {
         #     'class': 'logging.handlers.SysLogHandler',
         #     'address': '/dev/log',  # Adjust based on your syslog configuration
         #     'facility': 'local4',   # Adjust as needed
+        #     'formatter': 'verbose',
+        # },
+        # 'syslog': {
+        #     'level': 'INFO',
+        #     'class': 'logging.handlers.SysLogHandler',
+        #     'address': ('LAPTOP-M7ANHJQ9', 514),  # Replace <syslog_server_ip> with the IP of the syslog server
+        #     'facility': 'local4',  # Adjust as needed
         #     'formatter': 'verbose',
         # },
     },

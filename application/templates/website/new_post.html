@@ -2,11 +2,37 @@
 
 {% block title %}New Post{% endblock %}
 
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/userdashboard.css' %}">
+{% endblock %}
+
 {% block content %}
+<div class="dashboard-container">
+    <div class="sidebar">
+        <div class="sidebar-content">
+            {% if user.profile_photo %}
+                <img src="{{ user.profile_photo.url }}" alt="{{ user.full_name }}'s Profile Picture">
+                {% else %}
+                    <img src="{% static 'profile_photos/default_profile.png' %}" alt="Default Profile Picture">
+                {% endif %}
+            <h2>{{ user.full_name }}</h2>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Home</a></li>
+                <li><a href="{% url 'new_post' %}">Create New Post</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
     <h2>Create New Post</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Create Post</button>
     </form>
+</div>
+</div>
 {% endblock %}

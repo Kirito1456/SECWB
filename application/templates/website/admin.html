@@ -41,7 +41,7 @@
             <li>{{ user.email }} ({{ user.full_name }}) - Admin: {{ user.is_admin }}</li>
         {% endfor %}
     </ul> {% endcomment %}
-    <h3>Posts</h3>
+    {% comment %} <h3>Posts</h3>
     <ul>
         {% for post in posts %}
             <li>{{ post.title }} by {{ post.user.email }}
@@ -51,7 +51,7 @@
                 </form>
             </li>
         {% endfor %}
-    </ul>
+    </ul> {% endcomment %}
     {% comment %} <a href="{% url 'manage_users' %}">Manage Users</a> {% endcomment %}
     <a href="{% url 'view_all_posts' %}">View All Posts</a>
     <button><a href="{% url 'logout' %}">Logout</a></button>

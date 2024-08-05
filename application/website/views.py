@@ -39,11 +39,8 @@ def user_login(request):
         if request.method == 'POST':
             email = request.POST.get('email')
             password = request.POST.get('password')
-            print(email)
-            print(password)
             if email and password:
                 user = authenticate(request, email=email, password=password)
-                print(user)
                 if user is not None:
                     login(request, user)
                     logger.info(f"User {email} logged in.")
@@ -88,7 +85,7 @@ def dashboard(request):
         if not request.user.is_authenticated:
             return redirect('login')  # Redirect to login page if user is not authenticated
         
-        posts = Post.objects.all()
+        posts = Post.objects.filter(is_approved=True)
         search_form = PostSearchForm(request.GET)
         query = request.GET.get('query')
         filter_form = PostFilterForm(request.GET)
@@ -96,8 +93,6 @@ def dashboard(request):
         if filter_form.is_valid():
             start_date = filter_form.cleaned_data.get('start_date')
             end_date = filter_form.cleaned_data.get('end_date')
-            print(start_date)
-            print(end_date)
 
             if start_date and end_date:
                 posts = posts.filter(created_at__date__range=[start_date, end_date])
@@ -106,7 +101,6 @@ def dashboard(request):
             elif end_date:
                 posts = posts.filter(created_at__date__lte=end_date)
             
-            print(str(posts.query))
 
         if query:
             posts = posts.filter(title__icontains=query)
@@ -141,6 +135,7 @@ def new_post(request):
             if form.is_valid():
                 post = form.save(commit=False)
                 post.author = request.user  # Set the author to the currently logged-in user
+                post.is_approved = False
                 post.save()
                 logger.info(f"New post created by {request.user.email}: {post.title}")
                 return redirect('dashboard')
@@ -155,7 +150,7 @@ def new_post(request):
 @login_required
 def post_detail(request, post_id):
     try:
-        post = get_object_or_404(Post, id=post_id)
+        post = get_object_or_404(Post, id=post_id, is_approved=True)
         comments = Comment.objects.filter(post=post)
         is_liked = False
         if post.likes.filter(id=request.user.id).exists():
@@ -253,18 +248,18 @@ def admin_page(request):
     
     return render(request, 'admin.html', context)
 
-@user_passes_test(lambda u: u.is_admin)
-def delete_post(request, post_id):
-    try:
-        post = get_object_or_404(Post, id=post_id)
-        post.delete()
-        logger.info(f"Post deleted by admin {request.user.email}: {post.title}")
+# @user_passes_test(lambda u: u.is_admin)
+# def delete_post(request, post_id):
+#     try:
+#         post = get_object_or_404(Post, id=post_id)
+#         post.delete()
+#         logger.info(f"Post deleted by admin {request.user.email}: {post.title}")
     
-    except Exception as e:
-        logger.error(f"Error deleting post: {str(e)}", exc_info=True)
-        return get_exception_response(request, e, settings.DEBUG)
+#     except Exception as e:
+#         logger.error(f"Error deleting post: {str(e)}", exc_info=True)
+#         return get_exception_response(request, e, settings.DEBUG)
     
-    return redirect('admin_dashboard')
+#     return redirect('admin_dashboard')
 
 # @user_passes_test(lambda u: u.is_admin)
 # def manage_users(request, user_id):
@@ -353,3 +348,29 @@ def force_error(request):
 #     else:
 #         form = PostForm(instance=post)
 #     return render(request, 'edit_post.html', {'form': form})
+
+@user_passes_test(lambda u: u.is_admin)
+def manage_post(request, post_id, action):
+    try:
+        post = get_object_or_404(Post, id=post_id)
+        
+        if action == 'approve':
+            post.is_approved = True
+            post.save()
+            messages.success(request, f"Post '{post.title}' has been approved.")
+            logger.info(f"Admin {request.user.email} approved post: {post.title}")
+        
+        elif action == 'delete':
+            post.delete()
+            messages.success(request, f"Post '{post.title}' has been deleted.")
+            logger.info(f"Admin {request.user.email} deleted post: {post.title}")
+        
+        else:
+            messages.error(request, "Invalid action.")
+            return redirect('admin_page')
+    
+    except Exception as e:
+        logger.error(f"Error managing post: {str(e)}", exc_info=True)
+        return get_exception_response(request, e, settings.DEBUG)
+    
+    return redirect('view_all_posts')
