@@ -139,3 +139,181 @@
 2024-08-06 22:27:49,424 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
 2024-08-06 22:27:50,915 INFO "GET /logout/ HTTP/1.1" 302 0
 2024-08-06 22:27:50,920 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:30:44,587 INFO Watching for file changes with StatReloader
+2024-08-06 22:30:47,596 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:30:53,710 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:30:54,275 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:30:54,651 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:31:08,505 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:31:08,544 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:31:08,665 INFO "GET /static/css/admin_dashboard.css HTTP/1.1" 200 1115
+2024-08-06 22:31:53,566 INFO "GET /logout/ HTTP/1.1" 302 0
+2024-08-06 22:31:53,570 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:32:07,903 INFO D:\ITSECWB\SECWB\application\application\settings.py changed, reloading.
+2024-08-06 22:32:08,413 INFO Watching for file changes with StatReloader
+2024-08-06 22:32:14,604 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:32:14,623 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:32:20,282 ERROR Internal Server Error: /user_details/1/
+Traceback (most recent call last):
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\SECWB\application\website\views.py", line 289, in <lambda>
+    @user_passes_test(lambda u: u.is_admin)
+                                ^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'is_admin'
+2024-08-06 22:32:20,287 ERROR "GET /user_details/1/ HTTP/1.1" 500 78939
+2024-08-06 22:32:35,729 ERROR Internal Server Error: /view_all_posts/
+Traceback (most recent call last):
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\SECWB\application\website\views.py", line 280, in <lambda>
+    @user_passes_test(lambda u: u.is_admin)
+                                ^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'is_admin'
+2024-08-06 22:32:35,731 ERROR "GET /view_all_posts/ HTTP/1.1" 500 83168
+2024-08-06 22:32:42,567 ERROR Internal Server Error: /user_details/4/
+Traceback (most recent call last):
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\SECWB\application\website\views.py", line 289, in <lambda>
+    @user_passes_test(lambda u: u.is_admin)
+                                ^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'is_admin'
+2024-08-06 22:32:42,569 ERROR "GET /user_details/4/ HTTP/1.1" 500 83145
+2024-08-06 22:32:50,818 INFO "GET /logout/ HTTP/1.1" 302 0
+2024-08-06 22:32:50,825 INFO "GET / HTTP/1.1" 200 1447
+2024-08-06 22:32:50,863 INFO "GET /static/css/style.css HTTP/1.1" 304 0
+2024-08-06 22:34:03,110 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:34:08,689 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:34:08,718 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:34:50,623 ERROR Internal Server Error: /user_details/1/
+Traceback (most recent call last):
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\SECWB\application\website\views.py", line 289, in <lambda>
+    @user_passes_test(lambda u: u.is_admin)
+                                ^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'is_admin'
+2024-08-06 22:34:50,627 ERROR "GET /user_details/1/ HTTP/1.1" 500 78939
+2024-08-06 22:34:54,588 ERROR Internal Server Error: /admin_page/
+Traceback (most recent call last):
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\SECWB\application\website\views.py", line 232, in <lambda>
+    @user_passes_test(lambda u: u.is_admin)
+                                ^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'is_admin'
+2024-08-06 22:34:54,593 ERROR "GET /admin_page/ HTTP/1.1" 500 82997
+2024-08-06 22:35:03,693 ERROR Internal Server Error: /user_details/1/
+Traceback (most recent call last):
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\SECWB\application\website\views.py", line 289, in <lambda>
+    @user_passes_test(lambda u: u.is_admin)
+                                ^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'is_admin'
+2024-08-06 22:35:03,697 ERROR "GET /user_details/1/ HTTP/1.1" 500 83014
+2024-08-06 22:36:45,863 INFO Watching for file changes with StatReloader
+2024-08-06 22:36:47,463 INFO "GET / HTTP/1.1" 200 1447
+2024-08-06 22:36:51,029 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:36:51,636 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:36:58,874 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:36:58,920 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:37:05,983 ERROR Internal Server Error: /user_details/1/
+Traceback (most recent call last):
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\env\Lib\site-packages\django\contrib\auth\decorators.py", line 22, in _wrapper_view
+    if test_func(request.user):
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ITSECWB\SECWB\application\website\views.py", line 289, in <lambda>
+    @user_passes_test(lambda u: u.is_admin)
+                                ^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'is_admin'
+2024-08-06 22:37:05,987 ERROR "GET /user_details/1/ HTTP/1.1" 500 78939
+2024-08-06 22:37:26,399 INFO "GET /logout/ HTTP/1.1" 302 0
+2024-08-06 22:37:26,404 INFO "GET / HTTP/1.1" 200 1447
+2024-08-06 22:37:36,102 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:37:36,143 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:37:36,174 INFO "GET /static/css/userdashboard.css HTTP/1.1" 304 0
+2024-08-06 22:37:36,181 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:37:38,222 INFO "GET /post/new/ HTTP/1.1" 200 1483
+2024-08-06 22:37:38,269 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:37:48,534 INFO "POST /post/new/ HTTP/1.1" 302 0
+2024-08-06 22:37:48,542 INFO "GET /?next=/post/new/ HTTP/1.1" 200 1447
+2024-08-06 22:38:09,064 INFO D:\ITSECWB\SECWB\application\application\settings.py changed, reloading.
+2024-08-06 22:38:09,547 INFO Watching for file changes with StatReloader
+2024-08-06 22:38:17,731 INFO "POST /?next=/post/new/ HTTP/1.1" 302 0
+2024-08-06 22:38:17,779 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:38:19,984 INFO "GET /view_all_posts/ HTTP/1.1" 200 698
+2024-08-06 22:38:22,734 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:38:24,682 INFO "GET /view_all_posts/ HTTP/1.1" 200 698
+2024-08-06 22:38:25,483 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:38:27,692 INFO "GET /logout/ HTTP/1.1" 302 0
+2024-08-06 22:38:27,700 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:39:01,613 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:39:01,631 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:39:02,979 INFO "GET /user_details/1/ HTTP/1.1" 200 1261
+2024-08-06 22:39:04,236 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:39:05,201 INFO "GET /user_details/4/ HTTP/1.1" 200 959
+2024-08-06 22:39:06,779 INFO "GET /admin_page/ HTTP/1.1" 200 1803
+2024-08-06 22:39:07,670 INFO "GET /user_details/5/ HTTP/1.1" 200 1276
+2024-08-06 22:39:10,387 INFO "GET /admin_page/ HTTP/1.1" 200 1803
