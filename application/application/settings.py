@@ -54,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'axes.middleware.AxesMiddleware',
+    
+    'django_auto_logout.middleware.auto_logout',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -85,6 +87,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_auto_logout.context_processors.auto_logout_client',
             ],
         },
     },
@@ -101,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webapp',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': '12345678',
         'HOST': 'localhost',
         #'PORT': '4000',
         'PORT': '3306'  
@@ -210,3 +213,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Auto logout
+LOGIN_URL = 'login'
+
+AUTO_LOGOUT = {'IDLE_TIME': 300, 
+               'SESSION_TIME': 3600,
+               'REDIRECT_TO_LOGIN_IMMEDIATELY': True, 
+               'MESSAGE': 'The session has expired. Please login again to continue.',}

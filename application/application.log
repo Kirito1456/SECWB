@@ -3,3 +3,139 @@
 2024-08-06 01:01:46,328 WARNING "POST / HTTP/1.1" 429 64
 2024-08-06 01:01:51,934 WARNING Too Many Requests: /
 2024-08-06 01:01:51,935 WARNING "POST / HTTP/1.1" 429 64
+2024-08-06 13:03:39,214 WARNING Not Found: /favicon.ico
+2024-08-06 21:38:17,255 INFO Watching for file changes with StatReloader
+2024-08-06 21:38:27,897 INFO D:\ITSECWB\SECWB\application\application\settings.py changed, reloading.
+2024-08-06 21:38:28,423 INFO Watching for file changes with StatReloader
+2024-08-06 21:38:31,770 INFO Watching for file changes with StatReloader
+2024-08-06 21:38:33,181 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 21:38:33,224 INFO "GET /static/css/style.css HTTP/1.1" 304 0
+2024-08-06 21:38:40,838 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 21:38:40,908 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 21:38:40,946 INFO "GET /static/css/userdashboard.css HTTP/1.1" 304 0
+2024-08-06 21:38:40,960 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 21:38:58,612 INFO "GET /post/new/ HTTP/1.1" 302 0
+2024-08-06 21:38:58,619 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 21:40:07,067 INFO Watching for file changes with StatReloader
+2024-08-06 21:40:08,704 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 21:40:30,493 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 21:40:30,545 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 21:40:30,588 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 21:40:44,150 INFO "GET /profile/ HTTP/1.1" 302 0
+2024-08-06 21:40:44,156 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 21:40:55,787 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 21:40:55,813 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 21:40:55,887 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 21:40:56,782 INFO "GET /post/new/ HTTP/1.1" 200 1483
+2024-08-06 21:40:56,825 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 21:41:07,628 INFO "GET /dashboard/ HTTP/1.1" 302 0
+2024-08-06 21:41:07,633 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 21:44:51,753 INFO Watching for file changes with StatReloader
+2024-08-06 21:44:54,530 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 21:45:41,734 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 21:45:41,797 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 21:45:41,841 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 21:45:59,680 INFO "GET /dashboard/ HTTP/1.1" 302 0
+2024-08-06 21:45:59,693 WARNING Not Found: /dashboard/login/
+2024-08-06 21:45:59,693 WARNING "GET /dashboard/login/?next=/dashboard/ HTTP/1.1" 404 5066
+2024-08-06 21:47:42,536 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 21:47:42,637 INFO "GET /static/css/style.css HTTP/1.1" 200 1629
+2024-08-06 21:47:42,676 WARNING Not Found: /favicon.ico
+2024-08-06 21:47:42,677 WARNING "GET /favicon.ico HTTP/1.1" 404 5034
+2024-08-06 21:48:59,109 INFO D:\ITSECWB\SECWB\application\application\settings.py changed, reloading.
+2024-08-06 21:48:59,665 INFO Watching for file changes with StatReloader
+2024-08-06 22:08:06,422 INFO Watching for file changes with StatReloader
+2024-08-06 22:08:08,199 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 22:09:29,844 INFO Watching for file changes with StatReloader
+2024-08-06 22:09:34,054 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 22:09:41,663 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:09:41,703 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:09:41,740 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:10:04,329 INFO "GET /dashboard/ HTTP/1.1" 302 0
+2024-08-06 22:10:04,339 WARNING Not Found: /dashboard/login/
+2024-08-06 22:10:04,340 WARNING "GET /dashboard/login/?next=/dashboard/ HTTP/1.1" 404 5066
+2024-08-06 22:13:03,264 INFO Watching for file changes with StatReloader
+2024-08-06 22:13:13,774 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 22:13:22,650 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:13:22,685 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:13:22,721 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:13:22,757 INFO "GET /static/css/userdashboard.css HTTP/1.1" 200 2110
+2024-08-06 22:13:35,159 INFO "GET /post/new/ HTTP/1.1" 302 0
+2024-08-06 22:13:35,167 WARNING Not Found: /post/new/login/
+2024-08-06 22:13:35,168 WARNING "GET /post/new/login/?next=/post/new/ HTTP/1.1" 404 5062
+2024-08-06 22:14:52,471 INFO Watching for file changes with StatReloader
+2024-08-06 22:14:59,162 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 22:15:08,765 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:15:08,807 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:15:08,851 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:34,183 INFO "GET /post/new/ HTTP/1.1" 302 0
+2024-08-06 22:15:34,190 INFO "GET /?next=/post/new/ HTTP/1.1" 200 1338
+2024-08-06 22:15:45,350 INFO "POST /?next=/post/new/ HTTP/1.1" 302 0
+2024-08-06 22:15:45,370 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:15:45,406 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:46,848 INFO "GET /post/new/ HTTP/1.1" 200 1483
+2024-08-06 22:15:46,877 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:47,471 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:15:47,506 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:48,550 INFO "GET /post/new/ HTTP/1.1" 200 1483
+2024-08-06 22:15:48,580 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:49,351 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:15:49,396 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:50,452 INFO "GET /profile/ HTTP/1.1" 200 1876
+2024-08-06 22:15:50,487 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:51,443 INFO "GET /post/new/ HTTP/1.1" 200 1483
+2024-08-06 22:15:51,477 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:52,548 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:15:52,578 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:53,329 INFO "GET /post/new/ HTTP/1.1" 200 1483
+2024-08-06 22:15:53,365 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:54,464 INFO "GET /profile/ HTTP/1.1" 200 1876
+2024-08-06 22:15:54,499 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:54,976 INFO "GET /post/new/ HTTP/1.1" 200 1483
+2024-08-06 22:15:55,013 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:55,983 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:15:56,021 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:15:56,600 INFO "GET /post/new/ HTTP/1.1" 200 1483
+2024-08-06 22:15:56,642 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:16:13,399 INFO "GET /dashboard/ HTTP/1.1" 302 0
+2024-08-06 22:16:13,409 INFO "GET /?next=/dashboard/ HTTP/1.1" 200 1338
+2024-08-06 22:16:41,383 INFO D:\ITSECWB\SECWB\application\application\settings.py changed, reloading.
+2024-08-06 22:16:41,858 INFO Watching for file changes with StatReloader
+2024-08-06 22:16:58,638 INFO D:\ITSECWB\SECWB\application\application\settings.py changed, reloading.
+2024-08-06 22:16:59,120 INFO Watching for file changes with StatReloader
+2024-08-06 22:17:06,636 INFO D:\ITSECWB\SECWB\application\application\settings.py changed, reloading.
+2024-08-06 22:17:07,114 INFO Watching for file changes with StatReloader
+2024-08-06 22:17:13,243 INFO Watching for file changes with StatReloader
+2024-08-06 22:17:17,847 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 22:20:41,102 INFO Watching for file changes with StatReloader
+2024-08-06 22:21:26,805 INFO Watching for file changes with StatReloader
+2024-08-06 22:21:29,866 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 22:21:39,739 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:21:39,772 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:21:39,812 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:22:24,819 INFO Watching for file changes with StatReloader
+2024-08-06 22:22:28,221 INFO "GET /logout/ HTTP/1.1" 302 0
+2024-08-06 22:22:28,240 INFO "GET / HTTP/1.1" 200 1338
+2024-08-06 22:22:38,820 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:22:38,849 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:22:38,886 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:22:59,173 INFO "GET /dashboard/ HTTP/1.1" 302 0
+2024-08-06 22:22:59,182 INFO "GET /?next=/dashboard/ HTTP/1.1" 200 1338
+2024-08-06 22:26:11,773 INFO Watching for file changes with StatReloader
+2024-08-06 22:26:16,905 INFO "GET /?next=/dashboard/ HTTP/1.1" 200 1663
+2024-08-06 22:26:26,973 INFO "GET / HTTP/1.1" 200 1862
+2024-08-06 22:26:34,205 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:26:34,754 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:26:35,501 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:26:39,449 INFO "GET / HTTP/1.1" 200 1339
+2024-08-06 22:26:48,511 INFO "POST / HTTP/1.1" 302 0
+2024-08-06 22:26:48,533 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:26:48,566 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:27:03,873 INFO "GET /post/new/ HTTP/1.1" 302 0
+2024-08-06 22:27:03,877 INFO "GET /?next=/post/new/ HTTP/1.1" 200 1447
+2024-08-06 22:27:42,185 INFO "GET /?next=/post/new/ HTTP/1.1" 200 1339
+2024-08-06 22:27:49,380 INFO "POST /?next=/post/new/ HTTP/1.1" 302 0
+2024-08-06 22:27:49,391 INFO "GET /dashboard/ HTTP/1.1" 200 2141
+2024-08-06 22:27:49,424 WARNING "GET /static/profile_photos/default_profile.png HTTP/1.1" 404 1861
+2024-08-06 22:27:50,915 INFO "GET /logout/ HTTP/1.1" 302 0
+2024-08-06 22:27:50,920 INFO "GET / HTTP/1.1" 200 1339
