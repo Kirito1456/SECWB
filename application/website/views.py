@@ -267,6 +267,7 @@ def admin_page(request):
     
     return render(request, 'admin.html', context)
 
+@login_required
 @user_passes_test(lambda u: u.is_admin)
 def view_all_posts(request):
     try:
@@ -276,6 +277,7 @@ def view_all_posts(request):
         return get_exception_response(request, e, settings.DEBUG)
     return render(request, 'view_all_posts.html', {'posts': posts})
 
+@login_required
 @user_passes_test(lambda u: u.is_admin)
 def user_details(request, user_id):
     try:
