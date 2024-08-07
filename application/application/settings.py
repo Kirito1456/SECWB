@@ -149,32 +149,40 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
-        'file': {
+        'auth_file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': 'application.log',
+            'filename': 'auth.log',
             'formatter': 'verbose',
         },
-        # 'syslog': {
-        #     'level': 'INFO',
-        #     'class': 'logging.handlers.SysLogHandler',
-        #     'address': '/dev/log',  # Adjust based on your syslog configuration
-        #     'facility': 'local4',   # Adjust as needed
-        #     'formatter': 'verbose',
-        # },
-        # 'syslog': {
-        #     'level': 'INFO',
-        #     'class': 'logging.handlers.SysLogHandler',
-        #     'address': ('LAPTOP-M7ANHJQ9', 514),  # Replace <syslog_server_ip> with the IP of the syslog server
-        #     'facility': 'local4',  # Adjust as needed
-        #     'formatter': 'verbose',
-        # },
+        'transaction_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'transaction.log',
+            'formatter': 'verbose',
+        },
+        'admin_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'admin.log',
+            'formatter': 'verbose',
+        },
     },
     'loggers': {
-        'django': {
-            'handlers': ['file'],
+        'auth': {
+            'handlers': ['auth_file'],
             'level': 'INFO',
-            'propagate': True,
+            'propagate': False,
+        },
+        'transaction': {
+            'handlers': ['transaction_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'admin': {
+            'handlers': ['admin_file'],
+            'level': 'INFO',
+            'propagate': False,
         },
     },
     'formatters': {
