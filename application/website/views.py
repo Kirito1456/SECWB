@@ -63,7 +63,7 @@ def user_login(request):
             return get_exception_response(request, e, settings.DEBUG)
 
     return render(request, 'login.html', {'error_message': error_message})
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 def update_profile(request):
     try:
@@ -134,7 +134,7 @@ def user_logout(request):
         auth_logger.error(f"Error during logout: {str(e)}", exc_info=True)
         return get_exception_response(request, e, settings.DEBUG)
     # return redirect('login')
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 def new_post(request):
     if request.user.is_banned:
@@ -160,7 +160,7 @@ def new_post(request):
         transaction_logger.error(f"Error creating new post: {str(e)}", exc_info=True)
         return get_exception_response(request, e, settings.DEBUG)
     return render(request, 'new_post.html', {'form': form})
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 def post_detail(request, post_id):
     try:
@@ -192,7 +192,7 @@ def post_detail(request, post_id):
         return get_exception_response(request, e, settings.DEBUG)
     
     return render(request, 'post_detail.html', {'post': post, 'comments': comments, 'form': form, 'is_liked': is_liked,})
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 def edit_post(request, post_id):
     try:
@@ -266,7 +266,7 @@ def admin_page(request):
         return get_exception_response(request, e, settings.DEBUG)
     
     return render(request, 'admin.html', context)
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 @user_passes_test(lambda u: u.is_admin)
 def view_all_posts(request):
@@ -276,7 +276,7 @@ def view_all_posts(request):
         admin_logger.error(f"Error viewing all posts: {str(e)}", exc_info=True)
         return get_exception_response(request, e, settings.DEBUG)
     return render(request, 'view_all_posts.html', {'posts': posts})
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 @user_passes_test(lambda u: u.is_admin)
 def user_details(request, user_id):
