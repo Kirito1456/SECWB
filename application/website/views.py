@@ -11,6 +11,8 @@ from django.http import HttpResponse, HttpResponseForbidden
 from django.contrib import messages
 from .utils import get_exception_response
 from django.conf import settings
+from django.utils.decorators import decorator_from_middleware
+from django.views.decorators.cache import cache_control
 
 auth_logger = logging.getLogger('auth_logger')
 transaction_logger = logging.getLogger('transaction_logger')
@@ -78,6 +80,7 @@ def update_profile(request):
         return get_exception_response(request, e, settings.DEBUG)
     return render(request, 'update_profile.html', {'form': form})
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 def dashboard(request):
     try:
@@ -114,13 +117,23 @@ def dashboard(request):
 def user_logout(request):
     try:
         print("Logging out...")
+        request.session.flush()
         logout(request)
-        auth_logger.info("User logged out.")
+        auth_logger.info(f"User {request.user.email if request.user.is_authenticated else 'Anonymous'} logged out.")
         print("User logged out. Redirecting to login.")
+        
+        # Prevent going back to the previous page by setting cache-control headers
+        response = redirect('login')
+        response['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+        response['Pragma'] = 'no-cache'
+        response['Expires'] = '0'
+
+        return response
+    
     except Exception as e:
         auth_logger.error(f"Error during logout: {str(e)}", exc_info=True)
         return get_exception_response(request, e, settings.DEBUG)
-    return redirect('login')
+    # return redirect('login')
 
 @login_required
 def new_post(request):
@@ -233,6 +246,8 @@ def like_post(request, post_id):
     
     return redirect('post_detail', post_id=post.id)
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required
 @user_passes_test(lambda u: u.is_admin)
 def admin_page(request):
     try:

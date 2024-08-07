@@ -104,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'webapp',
         'USER': 'root',
-        'PASSWORD': '12345678',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
         #'PORT': '4000',
         'PORT': '3306'  
@@ -169,17 +169,17 @@ LOGGING = {
         },
     },
     'loggers': {
-        'auth': {
+        'auth_logger': {
             'handlers': ['auth_file'],
             'level': 'INFO',
             'propagate': False,
         },
-        'transaction': {
+        'transaction_logger': {
             'handlers': ['transaction_file'],
             'level': 'INFO',
             'propagate': False,
         },
-        'admin': {
+        'admin_logger': {
             'handlers': ['admin_file'],
             'level': 'INFO',
             'propagate': False,
