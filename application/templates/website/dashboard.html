@@ -31,10 +31,10 @@
             <h2>Welcome, {{ user.full_name }}!</h2>
         </div>
         <div class="filter-form">
-        <form method="get">
-            {{ filter_form.as_p }}
-            <button type="submit">Filter</button>
-        </form>
+            <form method="get">
+                {{ filter_form.as_p }}
+                <button type="submit">Filter</button>
+            </form>
         </div>
         <div class="search-form">
             <form method="get">
@@ -42,10 +42,10 @@
                 <button type="submit">Search</button>
             </form>
         </div>
-    
+        <hr>
         <div class="recent-posts">
             {% if query %}
-                <h3>Search results for "{{ query }}"</h3>
+                <h3>Search results for "{{ query }}":</h3>
             {% else %}
             <h2>Recent Posts</h2>
             {% endif %}

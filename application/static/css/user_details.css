@@ -12,47 +12,53 @@ body {
     padding: 20px;
 }
 
-h1 {
+.user-details {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.header {
+    background-color: #4CAF50;
+}
+
+.header p {
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+}
+
+h1, h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 5px;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
 }
 
 /* Image Styles */
 img {
     border-radius: 50%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 20px auto;
 }
 
 /* Button Styles */
 button {
-    display: block;
-    float: right;
-    margin: 0 auto;
+    display: inline-block;
+    margin: 20px 5px;
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -76,6 +82,16 @@ button a:hover {
     color: white;
 }
 
+/* Button Group Styles */
+.button-group {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.button-group form {
+    display: inline;
+}
+
 /* Link Styles */
 a {
     display: block;
@@ -84,7 +100,6 @@ a {
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    float: left;
 }
 
 a:hover {

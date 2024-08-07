@@ -26,22 +26,6 @@ body {
     text-align: center;
 }
 
-.user-profile {
-    margin-bottom: 20px;
-}
-
-.user-profile img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.user-profile h2 {
-    margin-bottom: 10px;
-}
-
 .sidebar ul {
     list-style-type: none;
     padding: 0;
@@ -58,7 +42,7 @@ body {
     display: block;
     padding: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    background-color: #34a853;
 }
 
 .sidebar ul li a:hover {
@@ -117,6 +101,24 @@ a:hover {
     text-decoration: underline;
 }
 
+.filter-form,
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+}
+
+.filter-form form,
+.search-form form {
+    display: flex;
+    align-items: center;
+}
+
+.filter-form form button,
+.search-form form button {
+    margin-left: 10px;
+}
+
 button {
     background-color: #34a853;
     color: white;
@@ -134,4 +136,9 @@ button a {
 
 button:hover {
     background-color: #2a7d43;
+}
+
+.profile h2 {
+    text-align: center;
+    font-size: 30px;
 }
