@@ -36,7 +36,6 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 
 def user_login(request):
-
     try:
         # force_error(request)
         if request.method == 'POST':
@@ -63,6 +62,7 @@ def user_login(request):
             return get_exception_response(request, e, settings.DEBUG)
 
     return render(request, 'login.html', {'error_message': error_message})
+
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 def update_profile(request):
@@ -104,7 +104,6 @@ def dashboard(request):
             elif end_date:
                 posts = posts.filter(created_at__date__lte=end_date)
             
-
         if query:
             posts = posts.filter(title__icontains=query)
     
@@ -116,11 +115,9 @@ def dashboard(request):
 
 def user_logout(request):
     try:
-        print("Logging out...")
+        auth_logger.info(f"User {request.user.email if request.user.is_authenticated else 'Anonymous'} logged out.")
         request.session.flush()
         logout(request)
-        auth_logger.info(f"User {request.user.email if request.user.is_authenticated else 'Anonymous'} logged out.")
-        print("User logged out. Redirecting to login.")
         
         # Prevent going back to the previous page by setting cache-control headers
         response = redirect('login')
@@ -133,7 +130,7 @@ def user_logout(request):
     except Exception as e:
         auth_logger.error(f"Error during logout: {str(e)}", exc_info=True)
         return get_exception_response(request, e, settings.DEBUG)
-    # return redirect('login')
+
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 def new_post(request):
@@ -143,7 +140,6 @@ def new_post(request):
         # messages.error(request, "You are banned and cannot create new posts.")
         # return redirect('dashboard')
     try:
-
         if request.method == 'POST':
             form = PostForm(request.POST)
             if form.is_valid():
@@ -160,6 +156,7 @@ def new_post(request):
         transaction_logger.error(f"Error creating new post: {str(e)}", exc_info=True)
         return get_exception_response(request, e, settings.DEBUG)
     return render(request, 'new_post.html', {'form': form})
+
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 def post_detail(request, post_id):
@@ -192,6 +189,7 @@ def post_detail(request, post_id):
         return get_exception_response(request, e, settings.DEBUG)
     
     return render(request, 'post_detail.html', {'post': post, 'comments': comments, 'form': form, 'is_liked': is_liked,})
+
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 def edit_post(request, post_id):
@@ -266,6 +264,7 @@ def admin_page(request):
         return get_exception_response(request, e, settings.DEBUG)
     
     return render(request, 'admin.html', context)
+
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 @user_passes_test(lambda u: u.is_admin)
@@ -276,6 +275,7 @@ def view_all_posts(request):
         admin_logger.error(f"Error viewing all posts: {str(e)}", exc_info=True)
         return get_exception_response(request, e, settings.DEBUG)
     return render(request, 'view_all_posts.html', {'posts': posts})
+
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 @login_required
 @user_passes_test(lambda u: u.is_admin)
