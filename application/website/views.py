@@ -36,6 +36,8 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 
 def user_login(request):
+    for message in messages.get_messages(request):
+        pass
     try:
         # force_error(request)
         if request.method == 'POST':
@@ -274,11 +276,13 @@ def view_all_posts(request):
 @user_passes_test(lambda u: u.is_admin)
 def user_details(request, user_id):
     try:
+        is_admin = request.user.is_admin
+        admin = request.user.email
         user = get_object_or_404(User, id=user_id)
     except Exception as e:
         admin_logger.error(f"Error loading user details: {str(e)}", exc_info=True)
         return get_exception_response(request, e, settings.DEBUG)
-    return render(request, 'user_details.html', {'user': user})
+    return render(request, 'user_details.html', {'user': user, 'admin': admin, 'is_admin': is_admin})
 
 @user_passes_test(lambda u: u.is_admin)
 def ban_user(request, user_id):
@@ -325,6 +329,8 @@ def force_error(request):
 @user_passes_test(lambda u: u.is_admin)
 def manage_post(request, post_id, action):
     try:
+        for message in messages.get_messages(request):
+            pass
         post = get_object_or_404(Post, id=post_id)
         
         if action == 'approve':

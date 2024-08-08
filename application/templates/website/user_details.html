@@ -12,7 +12,7 @@
 <div class="container">
     <h1>Manage User</h1>
     <div class="header">
-        <p><strong>User {{ user.id }} Details</strong></p>
+        <p><strong>User Details</strong></p>
     </div>
     <div class="user-details">
         <p><strong>Email:</strong> {{ user.email }}</p>
@@ -22,28 +22,25 @@
         <p><strong>Profile Photo:</strong> {% if user.profile_photo %}<img src="{{ user.profile_photo.url }}" alt="Profile Photo">{% else %}N/A{% endif %}</p>
     </div>
         <div class="button-group">
-            {% if user.is_banned %}
-                <form action="{% url 'unban_user' user.id %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Unban User</button>
-                </form>
-            {% else %}
-                <form action="{% url 'ban_user' user.id %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Ban User</button>
-                </form>
-            {% endif %}
+            {% if is_admin == True and user.email != admin %}
+                {% if user.is_banned %}
+                    <form action="{% url 'unban_user' user.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Unban User</button>
+                    </form>
+                {% else %}
+                    <form action="{% url 'ban_user' user.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Ban User</button>
+                    </form>
+                {% endif %}
 
-            {% if user.is_active %}
-                <form action="{% url 'deactivate_account' user.id %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit" name="action" value="deactivate">Deactivate</button>
-                </form>
-            {% comment %} {% else %}
-                <form action="{% url 'activate_account' user.id %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Activate Account</button>
-                </form> {% endcomment %}
+                {% if user.is_active %}
+                    <form action="{% url 'deactivate_account' user.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" name="action" value="deactivate">Deactivate</button>
+                    </form>
+                {% endif %}
             {% endif %}
         </div>
         <a href="{% url 'admin_page' %}">Back to Dashboard</a>
