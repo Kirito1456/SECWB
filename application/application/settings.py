@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'axes',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -228,4 +229,4 @@ LOGIN_URL = 'login'
 AUTO_LOGOUT = {'IDLE_TIME': 300, 
                'SESSION_TIME': 3600,
                'REDIRECT_TO_LOGIN_IMMEDIATELY': True, 
-               'MESSAGE': 'The session has expired. Please login again to continue.',}
+                }
