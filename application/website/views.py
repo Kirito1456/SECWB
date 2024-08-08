@@ -137,8 +137,7 @@ def new_post(request):
     if request.user.is_banned:
         auth_logger.warning(f"Banned user {request.user.email} attempted to create a new post.")
         return HttpResponseForbidden("You are banned and cannot create new posts.")
-        # messages.error(request, "You are banned and cannot create new posts.")
-        # return redirect('dashboard')
+
     try:
         if request.method == 'POST':
             form = PostForm(request.POST)
@@ -168,8 +167,6 @@ def post_detail(request, post_id):
             is_liked = True
         
         if request.user.is_banned:
-            # messages.error(request, "You are banned and cannot view this post.")
-            # return redirect('dashboard')
             auth_logger.warning(f"Banned user {request.user.email} attempted to view this post.")
             return HttpResponseForbidden("You are banned and cannot view this post.")
         
@@ -197,8 +194,6 @@ def edit_post(request, post_id):
         post = get_object_or_404(Post, id=post_id)
 
         if request.user.is_banned:
-            # messages.error(request, "You are banned and cannot edit this post.")
-            # return redirect('dashboard')
             auth_logger.warning(f"Banned user {request.user.email} attempted to edit this post.")
             return HttpResponseForbidden("You are banned and cannot edit this post.")
 
@@ -226,8 +221,6 @@ def like_post(request, post_id):
         post = get_object_or_404(Post, id=post_id)
 
         if request.user.is_banned:
-            # messages.error(request, "You are banned and cannot like or unlike posts.")
-            # return redirect('post_detail', post_id=post.id)
             auth_logger.warning(f"Banned user {request.user.email} attempted to like or unlike posts.")
             return HttpResponseForbidden("You are banned and cannot like or unlike posts.")
         
