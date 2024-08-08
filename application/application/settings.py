@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import logging
 import logging.handlers
+from logging.handlers import SysLogHandler 
+import socket
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -150,6 +152,14 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
+        'syslog': {
+            'level': 'INFO',
+            'class': 'logging.handlers.SysLogHandler',
+            'address': ('192.168.100.54', 514),
+            'formatter': 'verbose',
+            'facility': SysLogHandler.LOG_LOCAL2,
+            'socktype': socket.SOCK_DGRAM,
+        },
         'auth_file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
@@ -171,19 +181,19 @@ LOGGING = {
     },
     'loggers': {
         'auth_logger': {
-            'handlers': ['auth_file'],
+            'handlers': ['auth_file', 'syslog'],
             'level': 'INFO',
-            'propagate': False,
+            'propagate': True,
         },
         'transaction_logger': {
-            'handlers': ['transaction_file'],
+            'handlers': ['transaction_file', 'syslog'],
             'level': 'INFO',
-            'propagate': False,
+            'propagate': True,
         },
         'admin_logger': {
-            'handlers': ['admin_file'],
+            'handlers': ['admin_file', 'syslog'],
             'level': 'INFO',
-            'propagate': False,
+            'propagate': True,
         },
     },
     'formatters': {
